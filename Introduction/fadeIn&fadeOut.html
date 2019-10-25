@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <button style="padding: 2px 10px;font-size: 20px;cursor: pointer; margin-bottom: 10px;" onclick="fadeOut()">Start</button>
+    <img src="assets/images/image6.jpg" alt="loading" id="myimage">
+  </div>
+  <script type="text/javascript">
+  var element=document.getElementById("myimage");
+  var duration =1000;
+  var hidTime = 1000;
+  var showTime= 1000;
+  function setOpacity(value){
+element.style.opacity= value;
+  }
+  function fadeOut(){
+ for(i=0;i<=1;i+=0.01){
+   setTimeout("setOpacity("+(1-i)+")",i*duration);
+ }
+ setTimeout("fadeIn()",duration+hidTime);
+  }
+
+    function fadeIn(){
+ for(i=0;i<=1;i+=0.01){
+   setTimeout("setOpacity("+i+")",i*duration);
+ }
+ setTimeout("fadeOut()",duration+showTime);
+  }
+  
+
+
+  </script>
+</body>
+</html>

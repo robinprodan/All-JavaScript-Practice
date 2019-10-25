@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <form  name="myform" onsubmit="test()">
+      
+        <table>
+            <tr>
+              <td>Select</td>
+             <td> 
+               <input type="radio" name="chbox" value="JAVASCRIPT" >JAVASCRIPT<br>
+              <input type="radio" name="chbox" value="HTML" >HTML<br>
+              <input type="radio" name="chbox" value="PHP" >PHP<br>
+              <input type="radio" name="chbox" value="CSS" >CSS
+            </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" value="Submit"
+                name="Refresh"></td>
+              <td><input type="reset" value="Refresh"></td>
+            </tr>
+        </table>
+    </form>
+  <script>
+  function test(){
+    document.write("You Selected: "+selectCOde())
+  }
+  function selectCOde(){
+    for(i=0;i<=3;i++)
+    {
+      var takevalue = document.myform.chbox[i];
+      if(takevalue.checked){
+        return takevalue.value;
+      }
+    }
+  }
+  </script>
+</body>
+</html>

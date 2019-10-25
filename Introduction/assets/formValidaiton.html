@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table{
+   padding-top: 30px;
+      margin: 0 auto;
+    }
+  select{
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <p style="text-align: center;font-size: 30px">Form Validation</p>
+    <form  name="myform" method="POST" onsubmit="return ValidaitonForm()">
+      
+        <table>
+            <tr>
+              <td>Name</td>
+             <td> 
+               <input type="text" name="name">
+            </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+               <td> 
+                 <input type="text" name="email">
+              </td>
+              </tr>
+            <tr>
+                <tr>
+                    <td>Telephone</td>
+                   <td> 
+                     <input type="text" name="telephone"><br>
+                  <input type="checkbox" name="notCall" onclick="enableDisable(this)">Please don not call me.
+                </td>   
+                </tr>
+                  <tr>
+                      <td>What can we help you with?</td>
+                     <td> 
+                     <select name="subject" value="">
+                       <option>Select one</option>
+                       <option>customer service</option>
+                       <option>Question</option>
+                       <option>Comment</option>
+                       <option>Other</option>
+                     </select>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Comment</td>
+                       <td> 
+                         <input type="text" name="Comment">
+                      </td>
+                      </tr>
+                <tr>
+              <td></td>
+              <td>
+                <input type="submit" name="submit" value="Submit"></td>
+              <td>
+                <input style="margin-left: -6rem;" type="reset" name="reset" value="Refresh"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <div style="color: red;" id="show"></div>
+              </td>
+            </tr>
+        </table>
+    </form>
+  <script>
+  function ValidaitonForm(){
+ var name      = document.myform.name;
+ var email     = document.myform.email;
+ var telephone = document.myform.telephone;
+ var notCall   = document.myform.notCall;
+ var subject   = document.myform.subject;
+ var Comment   = document.myform.Comment;
+
+
+ if(name.value == ""){
+document.getElementById("show").innerHTML="Please enter your name"
+return false;
+  }
+
+  if(email.value == ""){
+document.getElementById("show").innerHTML="Please enter your email"
+return false;
+  }
+  if(email.value.indexOf("@",0)<0){
+document.getElementById("show").innerHTML="Please enter your valid email"
+return false;
+  }
+  if(email.value.indexOf(".",0)<0){
+document.getElementById("show").innerHTML="Please enter your valid email"
+return false;
+  }
+
+  if(telephone.value == "" && notCall.checked == false){
+document.getElementById("show").innerHTML="Please enter your telephone number"
+return false;
+  }
+
+
+  if(subject.selectedIndex<1){
+document.getElementById("show").innerHTML="Please tell us how we can help you"
+return false;
+  }
+  if(Comment.value == ""){
+document.getElementById("show").innerHTML="Please put your comment"
+return false;
+  }
+
+  }
+
+function enableDisable(chkbox){
+if(chkbox.checked == true){
+  document.myform.telephone.disabled = true;
+}else{
+  document.myform.telephone.disabled = false;
+}
+}
+
+
+ 
+  
+</script>
+</body>
+</html>

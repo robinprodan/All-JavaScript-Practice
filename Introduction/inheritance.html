@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     function totalNum(a,b){
+    this.x=a;
+    this.y=b;
+    this.sum = function(){
+      return this.x + this.y;
+    }
+     }
+  function productNum(a,b){
+    this.x=a;
+    this.y=b;
+    this.product = function(){
+      return this.x*this.y;
+    }
+  }
+  totalNum.prototype = new productNum()
+  var tn =new totalNum(10,2)
+  console.log(tn.product())
+  
+  </script>
+</body> 
+</html>

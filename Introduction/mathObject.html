@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      width: 270px;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    caption {
+      text-transform: capitalize;
+      padding: 5px 0px 10px 0px;
+    }
+
+    input[type="text"] {
+      width: 100px;
+      padding: 5px 8px;
+      background: #ddd;
+      border: 1px solid rgba(0, 0, 0, 0.349)
+    }
+
+    input[type="button"] {
+      width: 120px;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <form name="frm">
+    <table>
+      <caption>
+        Example of Different
+        methods and properties of math object
+      </caption>
+      <tr>
+        <td style="background: 	#ddd;border:1px solid rgba(0, 0, 0, 0.349);text-align: center;">
+          Input box:
+        </td>
+        <td><input type="text" name="getvalue"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Absolute" onclick="calculate(1)"></td>
+        <td><input type="button" value="Round" onclick="calculate(2)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Sine" onclick="calculate(3)"></td>
+        <td><input type="button" value="Cosine" onclick="calculate(4)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Tangent" onclick="calculate(5)"></td>
+        <td><input type="button" value="Log" onclick="calculate(6)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Floor" onclick="calculate(7)"></td>
+        <td><input type="button" value="Ceil" onclick="calculate(8)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Square Root" onclick="calculate(9)"></td>
+        <td><input type="button" value="Random" onclick="calculate(10)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Max" onclick="calculate(11)"></td>
+        <td><input type="button" value="Min" onclick="calculate(12)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="E" onclick="calculate(13)"></td>
+        <td><input type="button" value="Pi" onclick="calculate(14)"></td>
+      </tr>
+      <tr>
+        <td style="background: 	#ddd;border:1px solid rgba(0, 0, 0, 0.349);text-align: center;">
+          Result box:
+        </td>
+        <td><input type="text" name="ShowResult"></td>
+      </tr>
+    </table>
+  </form>
+  <script>
+    function calculate(process) {
+      with (document.frm)
+      switch (process) {
+        case 1:
+          ShowResult.value = Math.abs(getvalue.value);
+          break;
+        case 2:
+          ShowResult.value = Math.round(getvalue.value);
+          break;
+        case 3:
+          ShowResult.value = Math.sin(convertDegree(getvalue.value));
+          break;
+        case 4:
+          ShowResult.value = Math.cos(convertDegree(getvalue.value));
+          break;
+        case 5:
+          ShowResult.value = Math.tan(convertDegree(getvalue.value));
+          break;
+        case 6:
+          ShowResult.value = Math.log(getvalue.value);
+          break;
+        case 7:
+          ShowResult.value = Math.floor(getvalue.value);
+          break;
+        case 8:
+          ShowResult.value = Math.ceil(getvalue.value);
+          break;
+        case 9:
+          ShowResult.value = Math.sqrt(getvalue.value);
+          break;
+
+        case 10:
+          ShowResult.value = Math.random();
+          break;
+
+        case 11:
+          alert(Math.max(getvalue.value, prompt('Enter number', '0')) + 'is grater the number')
+          break;
+
+        case 12:
+          alert(Math.min(getvalue.value, prompt('Enter number', '0')) + 'is smaller the number')
+          break;
+
+
+        case 13:
+          ShowResult.value = Math.E;
+          break;
+        case 14:
+          ShowResult.value = Math.PI;
+          break;
+
+      }
+    }
+    function convertDegree(x) {
+      return x * 22 / 7 / 180
+    }
+  </script>
+</body>
+
+</html>

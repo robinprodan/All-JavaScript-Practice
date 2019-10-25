@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="" name="myform">
+    <!-- <table>
+      <tr>
+        <td>Your Email:</td>
+        <td><input type="email" required></td>
+      </tr>
+      <tr>
+        <td>Your password:</td>
+        <td><input type="password" required></td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" value="Submit">
+          <input type="reset" value=Refresh>
+        </td>
+      </tr>
+    </table> -->
+<!-- 
+    <table>
+        <tr>
+          <td><input type="text" name="inputbox"></td>
+          <td><input type="button" value="click" name="button" onclick="testResult(this.form)"></td>
+        </tr>
+      </table> -->
+
+      <table>
+        <tr>
+          <td><input type="text" name="t1" onchange="docCal(this.form,this.name)"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="chkbox"
+            onclick="docCal(this.form,this.name)"></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="result"
+            onchange="docCal(this.form,this.name)"></td>
+        </tr>
+        <tr>
+          <td><input type="reset" name="Refresh"></td>
+        </tr>
+      </table>
+ </form>
+  <script>
+//    function testResult(form){
+
+//    var testvar =form.inputbox.value;
+
+//    if(testvar == ""){
+//  alert("please type something")
+//    }else{
+//     alert("Your type  "+testvar);
+//    }
+//    }
+
+function docCal(form,field)
+{
+  if(field == "result"){
+    if(form.chkbox.checked){
+  form.t1.value = math.sqrt(form.result.value);
+    }else{
+      form.t1.value = form.result.value/2;
+    }
+  }else{
+  if(form.chkbox.checked){
+    form.result.value = form.t1.value* form.t1.value;
+  }
+  else{
+    form.result.value = form.t1.value*2;
+  }
+  }
+}
+
+
+  </script>
+</body>
+</html>

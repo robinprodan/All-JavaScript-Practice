@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div id="robin" onclick="liveProject(this)">Click Here</div> -->
+  <script>
+    // function liveProject(event)
+    // {
+    //   alert(event);
+    //   alert(this);
+    // }liveProject();
+
+
+    function liveProject(){
+      var a=200;
+      this.x = 300;
+      this.y = 400;
+      this.z = function()
+      {
+        return this.x+this.y;
+      }
+    }
+    var obj = new liveProject();
+    document.write(obj.z());
+    </script>
+</body>
+</html>

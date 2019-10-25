@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//      var timeout;
+//     function timeoutTrigger(){
+// document.getElementById("show").innerHTML="The timeout has been triggered"
+//     }
+ 
+//   function timeInit(){
+//   timeout =setTimeout("timeoutTrigger()",3000);
+//   document.getElementById("show").innerHTML="The timeout has been started";
+//   }
+
+
+var timeout;
+    function timeoutTrigger(){
+document.getElementById("show").innerHTML="The timeout has been triggered"
+    }
+ 
+  function timeInit(){
+  timeout =setTimeout("timeoutTrigger()",3000);
+  document.getElementById("show").innerHTML="The timeout has been started";
+  }
+
+  function timeClear(){
+    clearTimeout(timeout)
+document.getElementById("show").innerHTML="The timeout has been clear"
+    }
+
+
+   </script>
+   <div >
+<input type="button" value="Test Timeout" onclick="timeInit()">
+<input type="button" value="clear Timeout" onclick="timeClear()">
+   </div>
+   <div id="show"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+
+}
+.content
+{
+    background: #ddd;
+    width: 800px;
+    margin: 0 auto;
+}
+.header {
+	text-align: center;
+	color: rgb(56, 194, 63);
+    padding: 25px;
+    background: rgb(44, 135, 141);
+}
+.middle {
+	background: #ddd;
+	min-height: 440px;
+	margin: 10px;
+	padding: 5px 10px;
+}

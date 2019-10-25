@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//   function reverse(s){
+//  return s.split("").reverse().join("");
+//   }
+//   var x="a b c d";
+//   var rv=reverse(x);
+//   document.write(rv);
+
+String.prototype.reverse= function(){
+  var s="";
+  var i = this.length;
+  while(i>0){
+    s += this.substring(i-1,i);
+    i--;
+  }
+  return s;
+}
+   var x="a b c d";
+   document.write(x.reverse());
+  </script>
+</body>
+</html>

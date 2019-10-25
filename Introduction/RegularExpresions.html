@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button onclick="myreg()">Search</button>
+  <div id="show"></div> -->
+<!-- 
+  <button onclick="myreg()">Replace</button>
+  <div id="show">My name is robin</div> -->
+
+
+  
+  <!-- <button onclick="myreg()">Test Now</button>
+  <div id="str">My name is robin</div>
+  <div id="show"></div> -->
+
+  <table>
+    <tr>
+      <td>Your input</td>
+      <td><input type="text" id="getValue"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="button" value="Check" onclick="getNumber()"></td>
+    </tr>
+    <tr>
+      <td>Your Result</td>
+      <td><textarea style="height: 200px;" id="showValue"></textarea></td>
+    </tr>
+  </table>
+
+
+  <script>
+    //match, replace,search, split are regular expressions
+    // function myreg(){
+    //   var str = "Ikhtiar uddin ahmmed Robin Prodan"
+    //   var srch = str.search(/ahmmed/i)         //i works as a  modifier .modifiers means when I input small or capital letter then it works always their var input string.
+    //   document.getElementById("show").innerHTML=srch;
+    // }
+
+    // function myreg(){
+    //   var str = document.getElementById("show").innerHTML;
+    //   var input = str.replace("robin","ikhtiar")
+    //   document.getElementById("show").innerHTML=input
+    // }
+    
+// function myreg(){
+//   tx= document.getElementById("str").innerHTML;
+//       // document.getElementById("show").innerHTML=/o/.test(tx);
+
+//       document.getElementById("show").innerHTML=/r/.exec(tx);
+// }
+     
+function getNumber(){
+  document.getElementById("showValue").value=""
+  var getString = document.getElementById("getValue").value;
+  var result = getString.match(/\d+/g);
+if(result !=null)
+{
+  for(i=0;i<result.length;i++){
+    document.getElementById("showValue").value +=result[i]+"\n";
+  }
+}
+  
+}
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var countDown;
+    var countDownNumber;
+    function countDownInit() {
+      countDownNumber = 11;
+      countDownTrigger();
+    }
+    function countDownTrigger() {
+      if (countDownNumber > 0) {
+        countDownNumber--;
+        document.getElementById("show").innerHTML = countDownNumber;
+        if (countDownNumber > 0) {
+          countDown = setTimeout("countDownTrigger()", 1000)
+        }
+      }
+    }
+
+
+    function countdownClear() {
+      clearTimeout(countDown)
+    }
+
+  </script>
+  <div>
+    <input type="button" value="Start countDown" onclick="countDownInit()">
+    <input type="button" value="Stop countDown" onclick="countdownClear()">
+  </div>
+  <div id="show"></div>
+</body>
+
+</html>
